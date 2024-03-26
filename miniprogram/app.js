@@ -1,2 +1,7 @@
 import './utils/extendApi.js'
-App({})
+App({
+  onShow() {
+    const accountInfo = wx.getAccountInfoSync()
+    console.log(accountInfo)
+  }
+})

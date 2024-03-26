@@ -1,10 +1,12 @@
+import { env } from './env'
 import { modal, toast } from './extendApi'
 import WxRequest from './request'
 import { clearStorage, getStorage } from './storage'
 // 实例化
 const instance = new WxRequest({
-  baseURL: 'https://gmall-prod.atguigu.cn/mall-api/',
-  timeout: 15000
+  baseURL: env.baseURL,
+  timeout: 15000,
+  isLoading: false
 })
 // 配置请求拦截器
 instance.interceptors.request = (config) => {
