@@ -5,3 +5,7 @@
 <view class="box">
   <button type="warn" plain size="mini" bind:tap="handler1">测试发送请求1</button>
 </view>
+
+<view class="box">
+  <button type="warn" plain size="mini" bind:tap="allHandler">并发请求</button>
+</view>

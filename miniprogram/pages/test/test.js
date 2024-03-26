@@ -11,6 +11,10 @@ Page({
     const res = await instance.get('cart/getCartList11', { test: 111 }, { timeout: 2000 }).console.log(res)
   },
   async handler1() {},
+  async allHandler() {
+    const res = await instance.all(instance.get('index/findBanner'), instance.get('index/findCategory1'))
+    console.log(res)
+  },
   /**
    * 生命周期函数--监听页面加载
    */

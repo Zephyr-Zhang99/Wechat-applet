@@ -105,6 +105,12 @@ class WxRequest {
   put(url, data = {}, config = {}) {
     return this.request(Object.assign({ url, data, method: 'PUT' }, config))
   }
+  // 用来处理并发请求
+  all(...promise) {
+    // 通过展开运算法接收传递的参数
+    // 那么展开运算符会将传入的参数转成数组
+    return Promise.all(promise)
+  }
 }
 
 export default WxRequest
