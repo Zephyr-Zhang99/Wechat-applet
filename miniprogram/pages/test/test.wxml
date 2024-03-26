@@ -1,0 +1,7 @@
+<view class="box">
+  <button type="warn" plain size="mini" bind:tap="handler">测试发送请求</button>
+</view>
+
+<view class="box">
+  <button type="warn" plain size="mini" bind:tap="handler1">测试发送请求1</button>
+</view>

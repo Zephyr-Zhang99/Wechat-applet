@@ -40,9 +40,6 @@ export const modal = (options = {}) => {
         // 如果用户点击取消按钮，则resolve为false
         cancel && resolve(false)
       }
-    }).catch((error) => {
-      // 捕获错误，reject传入error
-      reject(error)
     })
   })
 }

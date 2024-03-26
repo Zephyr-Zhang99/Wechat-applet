@@ -3,6 +3,20 @@
   "projectname": "Wechat-applet",
   "setting": {
     "compileHotReLoad": true,
-    "skylineRenderEnable": true
+    "skylineRenderEnable": true,
+    "urlCheck": false
+  },
+  "condition": {
+    "miniprogram": {
+      "list": [
+        {
+          "name": "pages/test/test",
+          "pathName": "pages/test/test",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        }
+      ]
+    }
   }
 }
