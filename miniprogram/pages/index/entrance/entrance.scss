@@ -17,6 +17,10 @@
 
     &.small {
       margin-top: 36rpx;
+      .nav-img {
+        width: 50rpx;
+        height: 50rpx;
+      }
     }
 
     .navigator-nav {

@@ -1,6 +1,9 @@
+// 引入骨架屏样式
+@import './index.skeleton.scss';
+
 .index-container {
   position: relative;
-  
+
   // 首页背景图
   .window-bgc {
     height: 200rpx;

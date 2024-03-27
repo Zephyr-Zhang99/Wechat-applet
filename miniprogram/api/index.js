@@ -1,8 +1,16 @@
 import http from '../utils/http'
+
 /**
- * 用来获取首页轮播图数据
+ * 通过并发请求获取首页的数据
  * @returns
  */
-export const reqSwiperData = () => {
-  return http.get('/index/findBanner')
+export const reqIndexData = () => {
+  // 通过并发请求获取首页的数据,提升页面的渲染速度
+  return http.all(
+    http.get('/index/findBanner'),
+    http.get('/index/findCategory1'),
+    http.get('/index/advertisement'),
+    http.get('/index/findListGoods'),
+    http.get('/index/findRecommendGoods')
+  )
 }
