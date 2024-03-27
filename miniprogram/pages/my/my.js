@@ -1,5 +1,11 @@
+import { ComponentWithStore } from 'mobx-miniprogram-bindings'
+import { userStore } from '../../store/userstore.js'
 // pages/info/info.js
-Page({
+ComponentWithStore({
+  storeBindings: {
+    store: userStore,
+    fields: ['token', 'userInfo']
+  },
   // 页面的初始数据
   data: {
     // 初始化第二个面板数据
@@ -22,10 +28,12 @@ Page({
     ]
   },
 
-  // 跳转到登录页面
-  toLoginPage() {
-    wx.navigateTo({
-      url: '/pages/login/login'
-    })
+  methods: {
+    // 跳转到登录页面
+    toLoginPage() {
+      wx.navigateTo({
+        url: '/pages/login/login'
+      })
+    }
   }
 })

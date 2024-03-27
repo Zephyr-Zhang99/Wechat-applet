@@ -8,7 +8,7 @@ Page({
   // 去编辑页面
   toEdit() {
     wx.navigateTo({
-      url: '/modules/settingModule/pages/address/add/index'
+      url: '/modules/settingModulemodules/settingModulemodules/settingModule/pages/address/add/index'
     })
   }
 })
