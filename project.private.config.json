@@ -10,6 +10,13 @@
     "miniprogram": {
       "list": [
         {
+          "name": "收货地址",
+          "pathName": "modules/settingModule/pages/address/list/index",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
           "name": "pages/login/login",
           "pathName": "pages/login/login",
           "query": "",
