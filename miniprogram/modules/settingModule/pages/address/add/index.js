@@ -1,6 +1,6 @@
+import { reqAddAddress, reqAddressInfo, reqUpdateAddress } from '@/api/address.js'
+import QQMapWX from '@/libs/qqmap-wx-jssdk.min.js'
 import Schema from 'async-validator'
-import { reqAddAddress, reqAddressInfo, reqUpdateAddress } from '../../../../../api/address.js'
-import QQMapWX from '../../../../../libs/qqmap-wx-jssdk.min.js'
 Page({
   // 页面的初始数据
   data: {
