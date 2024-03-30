@@ -66,7 +66,7 @@ Page({
     } else {
       // 立即购买
       wx.navigateTo({
-        url: `/pages/order/detail/index?goodsId=${goodsId}&blessing=${blessing}`
+        url: `/modules/orderPayModule/pages/order/detail/detail?goodsId=${goodsId}&blessing=${blessing}`
       })
     }
   },

@@ -6,7 +6,7 @@
       <van-swipe-cell right-width="{{ 65 }}" id="swipe-cell-{{ item.id }}" bind:open="onSwipeCellOpen" bind:click="onSwipeCellClick">
         <van-cell-group border="{{ false }}">
           <view class="list-item-box">
-            <view class="info">
+            <view class="info" bindtap="changeAddress" data-id="{{item.id}}">
               <view class="user-info">
                 <text>{{item.name}}</text>
                 <text>{{item.phone}}</text>

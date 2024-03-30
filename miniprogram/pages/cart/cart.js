@@ -44,6 +44,21 @@ ComponentWithStore({
 
   // 组件的方法列表
   methods: {
+    // 跳转到订单结算页面
+    toOrder() {
+      if (this.data.totalPrice === 0) {
+        wx.toast({
+          title: '请选择需要购买的商品'
+        })
+
+        return
+      }
+
+      // 跳转到订单的结算页面
+      wx.navigateTo({
+        url: '/modules/orderPayModule/pages/order/detail/detail'
+      })
+    },
     // 删除购物车中的商品
     async delCartGoods(event) {
       // 获取需要删除商品的 id
