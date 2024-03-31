@@ -1,6 +1,6 @@
-import { reqAddAddress, reqAddressInfo, reqUpdateAddress } from '@/api/address.js'
-import QQMapWX from '@/libs/qqmap-wx-jssdk.min.js'
 import Schema from 'async-validator'
+import { reqAddAddress, reqAddressInfo, reqUpdateAddress } from '../../../api/address'
+import QQMapWX from '../../../libs/qqmap-wx-jssdk.min.js'
 Page({
   // 页面的初始数据
   data: {
@@ -18,8 +18,9 @@ Page({
   },
   onLoad(options) {
     // 实例化API核心类
+    // 需要配置账户额度
     this.qqmapwx = new QQMapWX({
-      key: 'W7WBZ-46LLW-O2SRC-YUYP5-55EOQ-3IFHT'
+      key: '申请的Key'
     })
     // 回显收货地址逻辑
     this.showAddressInfo(options.id)

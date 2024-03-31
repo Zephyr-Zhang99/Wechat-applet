@@ -10,6 +10,13 @@
     "miniprogram": {
       "list": [
         {
+          "name": "miniprogram/modules/orderPayModule/pages/order/list/list.wxml",
+          "pathName": "/miniprogram/modules/orderPayModule/pages/order/list/list.wxml",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        },
+        {
           "name": "收货地址",
           "pathName": "modules/settingModule/pages/address/list/index",
           "query": "",

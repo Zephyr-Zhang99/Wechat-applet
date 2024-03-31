@@ -14,9 +14,7 @@
         "miniprogramNpmDistDir": "./miniprogram/"
       }
     ],
-    "useCompilerPlugins": [
-      "sass"
-    ],
+    "useCompilerPlugins": ["sass"],
     "coverView": true,
     "es6": true,
     "postcss": true,
@@ -34,6 +32,6 @@
     "tabIndent": "auto",
     "tabSize": 2
   },
-  "appid": "wxbd08ad8bc127fd7d",
+  "appid": "",
   "srcMiniprogramRoot": "miniprogram/"
 }

@@ -1,6 +1,6 @@
 import { reqAddGood, reqCartList } from '@/api/cart.js'
-import { reqGoodsInfo } from '@/api/goods'
-import { userBehavior } from '@/behavior/userBehavior'
+import { reqGoodsInfo } from '../../../api/goods'
+import { userBehavior } from '../../../behavior/userBehavior'
 // pages/goods/detail/index.js
 Page({
   behaviors: [userBehavior],
@@ -113,5 +113,13 @@ Page({
     this.getGoodsInfo()
     // 计算购买数量
     this.getCartCount()
-  }
+  },
+  /**
+   * 用户点击右上角分享
+   */
+  onShareAppMessage: function () {},
+  /**
+   * 转发到朋友圈功能
+   */
+  onShareTimeline() {}
 })

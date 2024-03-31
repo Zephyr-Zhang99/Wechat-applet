@@ -1,5 +1,5 @@
 // pages/goods/list/index.js
-import { reqGoodsList } from '@/api/goods'
+import { reqGoodsList } from '../../../api/goods'
 Page({
   /**
    * 页面的初始数据

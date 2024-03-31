@@ -1,8 +1,8 @@
-import { reqOrderAddress, reqOrderInfo } from '@/api/orderpay.js'
-import { formatTime } from '@/utils/formatTime.js'
-import { reqBuyNowGoods } from '../../../../../api/orderpay'
+import { reqOrderAddress, reqOrderInfo, reqPreBuyInfo, reqSubmitOrder } from '../../../api/orderpay'
 // 导入 async-validator 对参数进行验证
 import Schema from 'async-validator'
+import { reqBuyNowGoods, reqPayStatus } from '../../../api/orderpay'
+import { formatTime } from '../../../utils/formatTime'
 const app = getApp()
 Page({
   data: {
@@ -30,7 +30,44 @@ Page({
     }
     // 对请求参数进行验证
     const { valid } = await this.validatorPerson(params)
-    console.log(valid)
+    // 如果验证失败
+    if (!valid) return
+    // 调用接口,创建平台订单
+    const res = await reqSubmitOrder(params)
+    if (res.code === 200) {
+      // 将订单号挂载到页面实例上
+      this.orderNo = res.data
+      // 获取预付单信息 支付参数
+      this.advancePay()
+    }
+  },
+  // 获取预付单信息 支付参数
+  async advancePay() {
+    try {
+      // 调用接口,获取预付单信息 支付参数
+      const payParams = await reqPreBuyInfo(this.orderNo)
+      if (payParams.code === 200) {
+        // 进行微信支付
+        const payInfo = await wx.requestPayment(payParams.data)
+        if (payInfo.errMsg === 'requestPayment:ok') {
+          // 查询订单的支付状态
+          const payStatus = await reqPayStatus(this.orderNo)
+          if (payStatus.code === 200) {
+            wx.redirectTo({
+              url: '/modules/orderPayModule/pages/order/list/list',
+              success: () => {
+                wx.toast({
+                  title: '支付成功',
+                  icon: 'success'
+                })
+              }
+            })
+          }
+        }
+      }
+    } catch (error) {
+      wx.toast({ title: '支付失败', icon: 'error' })
+    }
   },
   // 对新增收货地址请求参数进行验证
   validatorPerson(params) {

@@ -69,5 +69,15 @@ Page({
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {}
+  onShareAppMessage: function () {
+    return {
+      title: '所有的怦然心动,都是你',
+      path: '/miniprogram/pages/index/index',
+      imageUrl: '../../assets/images/love.jpg'
+    }
+  },
+  /**
+   * 转发到朋友圈功能
+   */
+  onShareTimeline() {}
 })

@@ -1,4 +1,4 @@
-import http from '../utils/http.js'
+import http from '@/utils/http.js'
 
 /**
  * @description 实现新增收货地址

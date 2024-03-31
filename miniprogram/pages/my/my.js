@@ -1,3 +1,4 @@
+import { debounce } from 'miniprogram-licia'
 import { ComponentWithStore } from 'mobx-miniprogram-bindings'
 import { userStore } from '../../store/userstore.js'
 // pages/info/info.js
@@ -30,10 +31,10 @@ ComponentWithStore({
 
   methods: {
     // 跳转到登录页面
-    toLoginPage() {
+    toLoginPage: debounce(function () {
       wx.navigateTo({
         url: '/pages/login/login'
       })
-    }
+    }, 500)
   }
 })
